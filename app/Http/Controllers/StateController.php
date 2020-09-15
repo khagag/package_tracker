@@ -24,6 +24,7 @@ class StateController extends Controller
     public function create()
     {
         //
+        return view('state/create');
     }
 
     /**
