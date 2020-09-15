@@ -38,3 +38,8 @@ Route::resources([
     'packages' => PackageController::class,
     'states' => StateController::class,
 ]);
+
+//client Routes
+Route::get('client/','ClientController@getPackage');
+Route::get('client/package','ClientController@showPackage');
+Route::post('client/package','ClientController@RetrivePackage');

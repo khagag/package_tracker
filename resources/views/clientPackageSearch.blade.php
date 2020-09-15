@@ -8,10 +8,10 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                  <form class="form-inline">
+                  <form class="form-inline  justify-content-center">
                     <div class="form-group mb-2">
-                      <label for="staticEmail2" class="sr-only">Package Code</label>
-                      <input type="text" class="form-control-plaintext" id="packageCode" value="">
+                      <label for="staticEmail2">Package Code </label>
+                      <input type="text" class="form-control ml-2 mr-2" id="packageCode" value="">
                     </div>
                     <button type="submit" class="btn btn-primary mb-2">Retrive</button>
                   </form>
