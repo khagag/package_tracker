@@ -18,6 +18,7 @@ class CreatePackagesTable extends Migration
             $table->string('code');
             $table->string('customer');
             $table->string('phone');
+            $table->string('description');
             $table->timestamps();
         });
     }
