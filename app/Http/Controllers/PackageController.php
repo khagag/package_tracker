@@ -24,6 +24,7 @@ class PackageController extends Controller
     public function create()
     {
         //
+        return view('package/create',['states',\App\State::all()]);
     }
 
     /**
