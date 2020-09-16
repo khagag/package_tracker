@@ -24,22 +24,23 @@
         </div>
         <div class="card">
           <div class="card-header">Create packate</div>
-          <form class='p-2'>
+          <form class='p-2' method="post" action="{{route('packages.store')}}">
+            @csrf
             <div class="form-group">
-              <label for="name">Package Code</label>
-              <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+              <label for="code">Package Code</label>
+              <input type="text" class="form-control" id="code" name='code'>
             </div>
             <div class="form-group">
-              <label for="name">Customer Name</label>
-              <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+              <label for="customer">Customer Name</label>
+              <input type="text" name='customer' class="form-control" id="customer">
             </div>
             <div class="form-group">
-              <label for="name">Customer Phone</label>
-              <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+              <label for="phone">Customer Phone</label>
+              <input type="text" class="form-control" id="phone" name='phone'>
             </div>
             <div class="form-group">
               <label for="desc">Description</label>
-              <textarea class="form-control" id="desc" rows="3"></textarea>
+              <textarea class="form-control" id="desc" name='desc' rows="3"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>

@@ -40,6 +40,6 @@ Route::resources([
 ]);
 
 //client Routes
-Route::get('client/','ClientController@getPackage');
-Route::get('client/package','ClientController@showPackage');
-Route::post('client/package','ClientController@RetrivePackage');
+Route::get('client/','ClientController@getPackage')->name('getPackage');
+Route::get('client/package','ClientController@showPackage')->name('showPackage');
+Route::post('client/package','ClientController@RetrivePackage')->name('RetrivePackage');

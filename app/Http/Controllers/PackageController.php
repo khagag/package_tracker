@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Package;
 
 class PackageController extends Controller
 {
@@ -36,6 +37,23 @@ class PackageController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->validate([
+          'code'=>'required',
+          'customer'=>'required',
+          'phone'=>'required',
+          'desc'=>'required',
+        ]);
+        $p = new Package();
+        // dd($data['code']);
+        // $p->fill($data);
+        $p->code=$data["code"];
+        $p->customer=$data["customer"];
+        $p->phone=$data["phone"];
+        $p->description=$data["desc"];
+        $p->save();
+
+        $request->session()->flash('state'=>'sucess');
+        return redirect()->route('packages.create');
     }
 
     /**
