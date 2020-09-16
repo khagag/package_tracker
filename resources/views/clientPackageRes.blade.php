@@ -8,6 +8,7 @@
             <x-admin-side-bar/>
           @else
             {{-- add the client sidebar component --}}
+            <x-client-sidebar/>
           @endif
         </div>
         <div class="col-md-8">
