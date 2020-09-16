@@ -70,6 +70,8 @@ class PackageController extends Controller
     public function show($id)
     {
         //
+        $p = Package::find($id);
+        return view('clientPackageRes',['package'=>$p]);
     }
 
     /**
