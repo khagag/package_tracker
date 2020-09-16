@@ -34,7 +34,7 @@ Route::post('/register/admin', 'Auth\RegisterController@createAdmin');
 
 
 Route::middleware([admin::class])->group(function(){
-  Route::view('/admin', 'admin');
+  Route::get('/admin', 'PackageController@create');
   Route::resources([
       'packages' => PackageController::class,
       'states' => StateController::class,
