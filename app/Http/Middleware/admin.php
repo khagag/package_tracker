@@ -21,6 +21,6 @@ class admin
          if (Auth::guard($guard)->check()) {
            return $next($request);
          }
-        return redirect()->route('packages.create');
+        return redirect()->route('adminLogin');
     }
 }
