@@ -25,7 +25,9 @@ class PackageController extends Controller
     public function create()
     {
         //
-        return view('package/create',['states',\App\State::all()]);
+        // dd(\App\State::all());
+        // $states=;
+        return view('package/create',['states'=>\App\State::all()]);
     }
 
     /**
@@ -50,6 +52,8 @@ class PackageController extends Controller
         $p->customer=$data["customer"];
         $p->phone=$data["phone"];
         $p->description=$data["desc"];
+        if($request['state']!='0')
+          $p->state_id=$request["state"];
         $p->save();
 
         $request->session()->flash('state','sucess');
@@ -90,6 +94,9 @@ class PackageController extends Controller
         //
     }
 
+    public function UpdateState(Request $request){
+
+    }
     /**
      * Remove the specified resource from storage.
      *

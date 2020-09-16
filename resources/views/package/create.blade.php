@@ -50,7 +50,17 @@
               <label for="desc">Description</label>
               <textarea class="form-control" id="desc" name='desc' rows="3"></textarea>
             </div>
-
+            <div class="form-group">
+              <label for="state">State</label>
+              <select class="custom-select" id='state' name='state'>
+                <option value='0' selected>Open this select menu</option>
+                @isset($states)
+                  @foreach ($states as $key => $value)
+                    <option value="{{$value->id}}">{{$value->name}}</option>
+                  @endforeach
+                @endisset
+              </select>
+            </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
