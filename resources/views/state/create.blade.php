@@ -5,15 +5,7 @@
     <div class="row justify-content-center">
       {{-- admin sidebar --}}
       <div class="col-sm-4">
-        <div class="card">
-          <div class="card-header">Control
-          </div>
-          <div class="list-group">
-            <a href="" class="list-group-item list-group-item-action">text</a>
-          </div>
-          <div class="card-footer">
-          </div>
-        </div>
+        <x-admin-side-bar/>
       </div>
       <div class="col-sm-8">
         @if(Session::has('state'))
