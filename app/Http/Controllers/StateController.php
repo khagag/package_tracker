@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\State;
 
 class StateController extends Controller
 {
@@ -36,6 +37,19 @@ class StateController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->validate([
+          'name'=>'required',
+          'desc'=>'required',
+        ]);
+        $s = new State();
+        // dd($data['code']);
+        // $p->fill($data);
+        $s->name=$data["name"];
+        $s->description=$data["desc"];
+        $s->save();
+
+        $request->session()->flash('state','sucess');
+        return redirect()->route('states.create');
     }
 
     /**
