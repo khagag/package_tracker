@@ -46,6 +46,10 @@ Route::middleware([admin::class])->group(function(){
 
 Route::group(['middleware' => ['auth']],function(){
   //client Routes
+  Route::get('/packages/search','PackageController@search')->name('packages.search');
+  Route::get('/packages/{package}','PackageController@show')->name('packages.show');
+  Route::post('/packages/search','PackageController@searchRes')->name('packages.search');
+
   Route::get('client/','ClientController@getPackage')->name('getPackage');
   Route::get('client/package','ClientController@showPackage')->name('showPackage');
   Route::post('client/package','ClientController@RetrivePackage')->name('RetrivePackage');
