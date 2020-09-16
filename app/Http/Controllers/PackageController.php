@@ -75,6 +75,37 @@ class PackageController extends Controller
     }
 
     /**
+     * Display the specified resources.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function searchRes(Request $request)
+    {
+        //
+        $p = Package::where('code', 'like', '%' . $request->search_value . '%')
+               ->orderBy('updated_at', 'desc')
+               ->take(10)
+               ->get();
+         return view('clientPackageSearch',['packages'=>$p]);
+    }
+
+    public function search(Request $request)
+    {
+        //
+        if(isset($request->search_value)){
+        $p = Package::where('code', 'like', '%' . $request->search_value . '%')
+               ->orderBy('updated_at', 'desc')
+               ->take(10)
+               ->get();
+               // dd($p);
+               return view('clientPackageSearch',['packages'=>$p]);
+             }
+        return view('clientPackageSearch');
+    }
+
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
