@@ -35,6 +35,7 @@ Route::post('/register/admin', 'Auth\RegisterController@createAdmin');
 
 Route::middleware([admin::class])->group(function(){
   Route::get('/admin', 'PackageController@create');
+  Route::put('/stateupdate', 'PackageController@UpdateState')->name('updateState');
   Route::resources([
       'packages' => PackageController::class,
       'states' => StateController::class,

@@ -15,6 +15,7 @@ class PackageController extends Controller
     public function index()
     {
         //
+        return view('package/updateState',['packages'=>Package::all(),'states'=>\App\State::all()]);
     }
 
     /**
@@ -92,9 +93,22 @@ class PackageController extends Controller
     public function update(Request $request, $id)
     {
         //
+
     }
 
     public function UpdateState(Request $request){
+      $data = $request->validate([
+        'package'=>'required|numeric',
+        'state'=>'required|numeric',
+      ]);
+      $p = Package::find($data['package']);
+      // dd($data['code']);
+
+      $p->state_id=$request["state"];
+      $p->save();
+
+      $request->session()->flash('state','sucess');
+      return redirect()->route('packages.index');
 
     }
     /**
