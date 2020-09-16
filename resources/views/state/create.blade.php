@@ -16,12 +16,14 @@
         </div>
       </div>
       <div class="col-sm-8">
+        @if(Session::has('state'))
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
           <strong>Congrats!</strong> You've Created new state.
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+        @endif
         <div class="card">
           <div class="card-header">Create state</div>
           <form class='p-2' action="{{route('states.store')}}" method="post">

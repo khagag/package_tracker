@@ -16,12 +16,14 @@
         </div>
       </div>
       <div class="col-sm-8">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>Congrats!</strong> You've Created new packate.
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
+        @if(Session::has('state'))
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Congrats!</strong> You've Created new packate.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        @endif
         <div class="card">
           <div class="card-header">Create packate</div>
           <form class='p-2' method="post" action="{{route('packages.store')}}">
