@@ -52,7 +52,7 @@ class PackageController extends Controller
         $p->description=$data["desc"];
         $p->save();
 
-        $request->session()->flash('state'=>'sucess');
+        $request->session()->flash('state','sucess');
         return redirect()->route('packages.create');
     }
 
